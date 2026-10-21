@@ -1,27 +1,195 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web je v údržbě</title>
-    
-    <!-- Správný tag: Říká Googlu, aby tuto provizorní stránku neukládal do výsledků vyhledávání -->
-    <meta name="robots" content="noindex, follow">
-    
-    <style>
-        body { 
-            font-family: sans-serif; 
-            text-align: center; 
-            padding: 150px 20px; 
-            background: #f4f4f4; 
-            color: #333; 
-        }
-        h1 { font-size: 40px; }
-        p { font-size: 20px; color: #666; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hubnutí bez nervů – Pavla Rousková, výživová poradkyně</title>
+<meta name="description" content="Certifikovaná výživová poradkyně Pavla Rousková. Individuální jídelníčky na míru, low carb jídelníčky, nastavení kalorických tabulek a asistovaný nákup. Konzultace online i osobně v Praze.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hubnutibeznervu.cz/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://hubnutibeznervu.cz/">
+<meta property="og:title" content="Hubnutí bez nervů – Pavla Rousková, výživová poradkyně">
+<meta property="og:description" content="Jídelníčky na míru, low carb, kalorické tabulky. Konzultace online i osobně v Praze.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Hubnutí bez nervů – Pavla Rousková",
+  "url": "https://hubnutibeznervu.cz/",
+  "description": "Výživové poradenství, jídelníčky na míru, low carb jídelníčky, nastavení kalorických tabulek a asistovaný nákup.",
+  "areaServed": ["Praha", "Česká republika"],
+  "founder": { "@type": "Person", "name": "Pavla Rousková", "jobTitle": "Výživová poradkyně" }
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f3f5f1;
+    --surface: #ffffff;
+    --text: #1f2a24;
+    --muted: #5d6b62;
+    --line: #d6ddd5;
+    --accent: #3f6b52;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161a17;
+      --surface: #1e2420;
+      --text: #e8ece7;
+      --muted: #a3afa6;
+      --line: #333c36;
+      --accent: #8fbf9f;
+      color-scheme: dark;
+    }
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: 100%; max-width: 56rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { padding-top: 1.25rem; padding-bottom: 1.25rem; font-weight: 500; }
+
+  main { flex: 1; }
+  .hero { padding: 4rem 0 3rem; display: grid; gap: 3rem; grid-template-columns: 1fr; }
+  @media (min-width: 760px) {
+    .hero { grid-template-columns: 1.2fr 1fr; align-items: center; padding: 5.5rem 0 4rem; }
+  }
+
+  .notice {
+    display: inline-block;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 0.75rem;
+    margin: 0 0 1.75rem;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    line-height: 1.1;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .lead { max-width: 34rem; margin: 0 0 1.5rem; color: var(--text); }
+
+  .motto { margin: 0; padding: 0; }
+  .motto blockquote {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .motto blockquote + blockquote { font-size: 1.15rem; color: var(--muted); margin-bottom: 0; }
+
+  section.services { border-top: 1px solid var(--line); padding: 3rem 0; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-weight: 500; font-size: 1.5rem; margin: 0 0 1.25rem; }
+  .services ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .services li { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+
+  section.contact { padding: 0 0 4rem; }
+  .contact p { margin: 0 0 0.5rem; }
+  .contact .c-line { font-size: 1.125rem; }
+
+  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.875rem; }
+  footer .wrap { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+</style>
 </head>
 <body>
-    <h1>Probíhá plánovaná údržba</h1>
-    <p>Omlouváme se, na webu právě pracujeme. Zkuste to prosím později.</p>
+  <header>
+    <div class="wrap">hubnutibeznervu.cz</div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <p class="notice">Web právě přestavujeme. Nová verze bude brzy hotová.</p>
+          <h1>Pavla Rousková</h1>
+          <p class="lead">Jsem certifikovaná výživová poradkyně, ale hlavně žena, která si celou cestou redukce prošla sama, a nyní chci pomoci i vám. Poradenství i během úprav webu běží dál – stačí se ozvat.</p>
+        </div>
+        <figure class="motto">
+          <blockquote>„Zklam všechny, kteří tě podceňovali.“</blockquote>
+          <blockquote>„Všechno, co jsme, je výsledkem našich myšlenek.“</blockquote>
+        </figure>
+      </div>
+
+      <section class="services" aria-labelledby="sluzby">
+        <h2 id="sluzby">S čím vám pomohu</h2>
+        <ul>
+          <li>Úvodní konzultace online nebo osobně v Praze</li>
+          <li>Jídelníček na míru na týden, měsíc i dva měsíce</li>
+          <li>Low carb jídelníčky</li>
+          <li>Nastavení kalorických tabulek</li>
+          <li>Asistovaný nákup (Praha)</li>
+          <li>Gramáže a postupy ke každému jídlu</li>
+        </ul>
+      </section>
+
+      <section class="contact" aria-labelledby="kontakt">
+        <h2 id="kontakt">Kontakt</h2>
+        <p class="c-line">E-mail: <span id="c-mail">poradna [zavináč] hubnutibeznervu [tečka] cz</span></p>
+        <p class="c-line">Telefon: <span id="c-tel">zobrazí se po načtení stránky</span></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="yr">2026</span> hubnutibeznervu.cz · Pavla Rousková</div>
+  </footer>
+
+<script>
+  // Kontakty se skládají až v prohlížeči, aby je jednoduché roboty nepřečetly ze zdrojového kódu.
+  (function () {
+    try {
+      var u = ["an", "dar", "op"].reverse().join("");
+      var d = ["cz", "hubnutibeznervu"].reverse().join(".");
+      var m = u + String.fromCharCode(64) + d;
+      var a = document.createElement("a");
+      a.href = "mai" + "lto:" + m;
+      a.textContent = m;
+      var el = document.getElementById("c-mail");
+      el.textContent = "";
+      el.appendChild(a);
+
+      var p = ["964", "635", "732"].reverse();
+      var t = document.createElement("a");
+      t.href = "te" + "l:+420" + p.join("");
+      t.textContent = "+420 " + p.join(" ");
+      var tl = document.getElementById("c-tel");
+      tl.textContent = "";
+      tl.appendChild(t);
+
+      document.getElementById("yr").textContent = new Date().getFullYear();
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>
