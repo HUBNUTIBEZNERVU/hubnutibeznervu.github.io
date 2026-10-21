@@ -1,1 +1,24 @@
+<?php
+// 1. Odeslání HTTP stavového kódu 503
+http_response_code(503);
 
+// 2. Volitelné: Řekne robotům, že mají zkusit web znovu za 1 den (86400 sekund)
+header('Retry-After: 86400');
+?>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web je v údržbě</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 150px 20px; background: #f4f4f4; color: #333; }
+        h1 { font-size: 40px; }
+        p { font-size: 20px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Probíhá plánovaná údržba</h1>
+    <p>Omlouváme se, ale na webu právě pracujeme. Zkuste to prosím později.</p>
+</body>
+</html>
